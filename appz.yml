@@ -1,0 +1,71 @@
+app:
+  name: AWS Workload
+  code: AWSWORKLOAD
+  notify: appzdev@cloudbourne.co
+
+build:
+  version: 0.2
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: aws-0.2
+  image_name: alpha/aws-0.2
+
+deploy:
+  context: alpha/DEV
+  replicas: 1
+
+monitor:
+  notify: appzops@cloudbourne.co      
+
+properties:
+# AppZ Ansible Playbook
+  APPZ_PLAYLIST: aws-cft-postgresdb,aws-cft-lambda,aws-cft-rds,aws-cft-redshift,aws-cft-s3
+
+# AWS
+  AWS_ACCESS_KEY:
+    vault: AWS_ACCESS_KEY
+  AWS_SECRET_KEY:
+    vault: AWS_SECRET_KEY
+  AWS_REGION: us-east-2
+  
+# S3
+  AWS-CFT-S3_STACK_NAME: appz-AWS-CFT-S3
+  AWS-CFT-S3_HOSTNAME: localhost
+  AWS-CFT-S3_BUCKETNAME: appz-bucket-appz
+
+# Lambda
+  AWS-CFT-LAMBDA_STACK_NAME: appz-Lambda-Stack
+  AWS-CFT-LAMBDA_HOSTNAME: localhost
+  AWS_CF_TEMPLATE: cloudformation.yaml.j2
+
+# REDSHIFT
+  AWS-CFT-REDSHIFT_STACK_NAME: appz-Redshift-Stack
+  AWS-CFT-REDSHIFT_HOSTNAME: localhost
+  AWS_REDSHIFT_MASTER_USER: test
+  AWS_REDSHIFT_MASTER_PASS: Test1234
+  REDSHIFT_DBPORT: 5439
+  SECURITYGROUPID: sg-4d4ff324
+  CIDRIP: 0.0.0.0/0
+
+# Postgres
+  AWS-CFT-POSTGRESDB_STACK_NAME: appz-postgres-stack
+  AWS-CFT-POSTGRESDB_HOSTNAME: localhost
+  POSTGRESDB_USER: test
+  POSTGRESDB_NAME: testdb
+  POSTGRESDB_MASTER_PASSWORD: Test1234
+
+# RDS
+  AWS-CFT-RDS_STACK_NAME: appz-RDS-Stack
+  AWS-CFT-RDS_HOSTNAME: localhost
+  ENGINE: sqlserver-se
+  DBINSTANCECLASS: db.t3.xlarge
+  MASTERUSERNAME: appz
+  MASTERPASSWORD: Test1234
+  DBPORTNUMBER: 1433
+  DBINPUTCIDR: 0.0.0.0/0
+  VPCSECURITYGROUPS: sg-4d4ff324
+
+# common properties  
+  APPZ_TEARDOWN_TOKEN: 20200721-1655
+  revision : 19
