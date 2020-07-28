@@ -68,4 +68,4 @@ properties:
 
 # common properties  
   APPZ_TEARDOWN_TOKEN: 20200721-1655
-  revision : 01
+  revision : 02
