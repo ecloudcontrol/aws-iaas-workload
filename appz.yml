@@ -19,8 +19,8 @@ monitor:
   notify: appzops@cloudbourne.co      
 
 properties:
-# AppZ Ansible Playbook
-  APPZ_PLAYLIST: aws-cft-postgresdb,aws-cft-lambda,aws-cft-rds,aws-cft-redshift,aws-cft-s3
+# AppZ Ansible Playbook -aws-cft-postgresdb,aws-cft-lambda,aws-cft-rds,aws-cft-redshift,aws-cft-s3
+  APPZ_PLAYLIST: aws-cft-lambda
 
 # AWS
   AWS_ACCESS_KEY:
