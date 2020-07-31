@@ -21,7 +21,7 @@ monitor:
 properties:
 # AppZ Ansible Playbook -aws-cft-postgresdb,aws-cft-lambda,aws-cft-rds,aws-cft-redshift,aws-cft-s3
   APPZ_PLAYLIST: aws-cft-s3,aws-cft-postgresdb
-  PLAY_HOST: localhost
+  PLAY_HOST: 127.0.0.1
   
 # AWS
   AWS_ACCESS_KEY:
