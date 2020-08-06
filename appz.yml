@@ -19,8 +19,9 @@ monitor:
   notify: appzops@cloudbourne.co      
 
 properties:
-# AppZ Ansible Playbook -aws_cft_postgresdb,aws_cft_lambda,aws_cft_rds,aws_cft_redshift,aws_cft_s3
-  APPZ_PLAYLIST: aws_cft_s3
+# AppZ Ansible Playbook : aws_cft_postgresdb,aws_cft_lambda,aws_cft_rds,aws_cft_redshift,aws_cft_s3
+
+  APPZ_PLAYLIST: aws_cft_s3,aws_cft_postgresdb
   PLAY_HOST: 127.0.0.1
   
 # AWS
@@ -29,18 +30,10 @@ properties:
   AWS_SECRET_KEY:
     vault: AWS_SECRET_KEY
   AWS_REGION: us-east-2
-  REDSHIFT_MASTER_PASS:
-    vault: REDSHIFT_MASTER_PASS
-  POSTGRESDB_MASTER_PASSWORD:
-    vault: POSTGRESDB_MASTER_PASSWORD
-  SQLSERVER_PASSWORD:
-    vault: SQLSERVER_PASSWORD
-  AURORA_MYSQL_MASTER_PASSWORD:
-    vault: AURORA_MYSQL_MASTER_PASSWORD
-    
+
 # S3
   S3_STACK_NAME: appz-AWS-CFT-S3
-  S3_BUCKETNAME: appz-bucket-appz
+  S3_BUCKETNAME: appz-bucket-appz-awsdemo
 
 # Lambda
   LAMBDA_STACK_NAME: appz-Lambda-Stack
@@ -52,13 +45,17 @@ properties:
   REDSHIFT_DBPORT: 5439
   REDSHIFT_SECURITYGROUPID: sg-4d4ff324
   REDSHIFT_CIDRIP: 0.0.0.0/0
-
+  REDSHIFT_MASTER_PASS:
+    vault: REDSHIFT_MASTER_PASS
+    
 # Postgres
   POSTGRESDB_STACK_NAME: appz-postgres-stack
   POSTGRESDB_USER: test
   POSTGRESDB_MASTER_NAME: testdb
-  
-# RDS
+  POSTGRESDB_MASTER_PASSWORD:
+    vault: POSTGRESDB_MASTER_PASSWORD
+    
+# RDS - MSSQLSERVER
   RDS_STACK_NAME: appz-RDS-Stack
   ENGINE: sqlserver-se
   DBINSTANCECLASS: db.t3.xlarge
@@ -66,7 +63,9 @@ properties:
   SQLSERVER_DBPORT: 1433
   RDS_CIDR: 0.0.0.0/0
   RDS_SECURITYGROUPID: sg-4d4ff324
-  
+  SQLSERVER_PASSWORD:
+    vault: SQLSERVER_PASSWORD
+    
   # SQS
   SQS_QUEUE_NAME: testqueue
   SQS_STACK_NAME: test
@@ -76,7 +75,9 @@ properties:
   AURORA_MYSQL_MASTER_USERNAME: master
   AURORA_MYSQL_DATABASE_NAME: TESTMYSQLDB
   AURORA_MYSQL_CLUSTER_NAME: mysqlcluster
-
+  AURORA_MYSQL_MASTER_PASSWORD:
+    vault: AURORA_MYSQL_MASTER_PASSWORD
+    
 # common properties  
   APPZ_TEARDOWN_TOKEN: 20200721-1655
   revision : 06
