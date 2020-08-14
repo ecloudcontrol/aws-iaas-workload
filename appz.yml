@@ -21,7 +21,8 @@ monitor:
 properties:
 # AppZ Ansible Playbook : aws_cft_postgresdb,aws_cft_lambda,aws_cft_rds,aws_cft_redshift,aws_cft_s3
 
-  APPZ_PLAYLIST: aws_cft_s3,aws_cft_postgresdb
+#  APPZ_PLAYLIST: aws_cft_s3,aws_cft_postgresdb
+  APPZ_PLAYLIST: aws_cft_s3
   PLAY_HOST: 127.0.0.1
   
 # AWS
@@ -33,7 +34,7 @@ properties:
 
 # S3
   S3_STACK_NAME: appz-AWS-CFT-S3
-  S3_BUCKETNAME: appz-bucket-appz-awsdemo
+  S3_BUCKETNAME: appz-bucket-appz-awsdemo-psg
 
 # Lambda
   LAMBDA_STACK_NAME: appz-Lambda-Stack
@@ -80,4 +81,4 @@ properties:
     
 # common properties  
   APPZ_TEARDOWN_TOKEN: 20200806-1800
-  revision : 06
+  revision : 07
