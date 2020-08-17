@@ -80,5 +80,5 @@ properties:
     vault: AURORA_MYSQL_MASTER_PASSWORD
     
 # common properties  
-  APPZ_TEARDOWN_TOKEN: 20200806-1800
+  APPZ_TEARDOWN_TOKEN: 20200817-1900
   revision : 07
