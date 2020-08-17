@@ -33,8 +33,11 @@ properties:
   AWS_REGION: us-east-2
 
 # S3
-  S3_STACK_NAME: appz-AWS-CFT-S3
-  S3_BUCKETNAME: appz-bucket-appz-awsdemo-psg
+  S3_STACK_NAME: appz-AWS-CFT-S3-abhi
+  S3_BUCKETNAME: appz-s3-abhi1,appz-s3-abhi2,appz-s3-abhi3
+  S3_DELETIONPOLICY: Delete
+  S3_ACCESSCONTROL: Private
+  S3_VERSIONING_STATUS: Suspended
 
 # Lambda
   LAMBDA_STACK_NAME: appz-Lambda-Stack
