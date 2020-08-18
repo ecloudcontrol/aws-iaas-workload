@@ -53,7 +53,7 @@ properties:
     vault: REDSHIFT_MASTER_PASS
     
 # Postgres
-  POSTGRESDB_STACK_NAME: appz-postgres-stack-test
+  POSTGRESDB_STACK_NAME: appz-postgres-stack-test2
   POSTGRESDB_USER: test
   POSTGRESDB_MASTER_NAME: testdb
   POSTGRESDB_MASTER_PASSWORD:
