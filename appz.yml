@@ -9,7 +9,7 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: aws-0.2
-  image_name: alpha/aws-0.2
+  image_name: alpha/aws-workload-0.2
 
 deploy:
   context: alpha/DEV
