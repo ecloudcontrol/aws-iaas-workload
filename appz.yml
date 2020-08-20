@@ -34,7 +34,7 @@ properties:
 
 # S3
   S3_STACK_NAME: appz-AWS-CFT-S3
-  S3_BUCKETNAME: appz-bucket-appz-awsdemo-pg2
+  S3_BUCKETNAME: appz-bucket-appz-awsdemo-pg0820
 
 # Lambda
   LAMBDA_STACK_NAME: appz-Lambda-Stack
@@ -81,4 +81,4 @@ properties:
     
 # common properties  
   APPZ_TEARDOWN_TOKEN: 20200820-1515
-  revision : 12
+  revision : 13
