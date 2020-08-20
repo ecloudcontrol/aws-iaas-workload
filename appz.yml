@@ -9,7 +9,7 @@ build:
   build_file: none
   output_files: output/*.zip
   image_template: aws-0.2
-  image_name: alpha/aws-workload-0.2
+  image_name: alpha/aws-workload
 
 deploy:
   context: alpha/DEV
@@ -34,7 +34,7 @@ properties:
 
 # S3
   S3_STACK_NAME: appz-CFT-abhi-1313
-  S3_BUCKETNAME: appz-s3-1313-1,appz-s3-1313-2,appz-s3-1313-3
+  S3_BUCKETNAME: appz-s3-1313-112345
   S3_DELETIONPOLICY: Delete
   S3_ACCESSCONTROL: Private
   S3_VERSIONING_STATUS: Suspended
