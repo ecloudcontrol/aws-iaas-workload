@@ -34,7 +34,7 @@ properties:
 
 # S3
   S3_STACK_NAME: appz-AWS-CFT-S3
-  S3_BUCKETNAME: appz-bucket-appz-awsdemo-pg0820
+  S3_BUCKETNAME: appz-bucket-appz-awsdemo-pg0821
 
 # Lambda
   LAMBDA_STACK_NAME: appz-Lambda-Stack
