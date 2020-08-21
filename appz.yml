@@ -32,9 +32,13 @@ properties:
     vault: AWS_SECRET_KEY
   AWS_REGION: us-east-2
 
+
 # S3
-  S3_STACK_NAME: appz-AWS-CFT-S3
-  S3_BUCKETNAME: appz-bucket-appz-awsdemo-pg0821
+  S3_STACK_NAME: APPZ-AWS-CFT-S3
+  S3_BUCKETNAMES: appz-bucket-prasad0821
+  S3_DELETIONPOLICY: Delete
+  S3_ACCESSCONTROL: Private
+  S3_VERSIONING_STATUS: Suspended
 
 # Lambda
   LAMBDA_STACK_NAME: appz-Lambda-Stack
