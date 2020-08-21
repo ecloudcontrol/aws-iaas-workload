@@ -33,8 +33,8 @@ properties:
   AWS_REGION: us-east-2
 
 # S3
-  S3_STACK_NAME: appz-CFT-abhi-1313
-  S3_BUCKETNAMES: appz-s3-1313-112345
+  S3_STACK_NAME: ABHI-APPZ-AWS-CFT-S3
+  S3_BUCKETNAMES: abhi-bucket-appz
   S3_DELETIONPOLICY: Delete
   S3_ACCESSCONTROL: Private
   S3_VERSIONING_STATUS: Suspended
