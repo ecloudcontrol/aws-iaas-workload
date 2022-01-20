@@ -1,88 +1,31 @@
 app:
-  name: AWS Workload
-  code: AWSWORKLOAD
-  notify: appzdev@cloudbourne.co
+  name: AWS IAAS Workload
+  code: AWSIAASWORKLOAD
+  notify: skumar@ecloudcontrol.com
 
 build:
-  version: 0.2
+  version: 2.0
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: aws-0.2
-  image_name: alpha/aws-0.2
+  image_template: aws_test-2.0
 
 deploy:
-  context: alpha/DEV
+  context: skumarpi/DEV
   replicas: 1
 
-monitor:
-  notify: appzops@cloudbourne.co      
+   
 
-properties:
-# AppZ Ansible Playbook : aws_cft_postgresdb,aws_cft_lambda,aws_cft_rds,aws_cft_redshift,aws_cft_s3
-
-#  APPZ_PLAYLIST: aws_cft_s3
-  APPZ_PLAYLIST: aws_cft_s3
-  PLAY_HOST: 127.0.0.1
-  
-# AWS
-  AWS_ACCESS_KEY:
-    vault: AWS_ACCESS_KEY
-  AWS_SECRET_KEY:
-    vault: AWS_SECRET_KEY
+properties:  
+  TITLE: 'Welcome to AppZ Platform'
+  TF_VAR_USER_NAME: ubuntu
+  TF_VAR_AWS_ACCESS_KEY:
+    vault: TF_VAR_AWS_ACCESS_KEY
+  TF_VAR_AWS_SECRET_KEY:
+    vault: TF_VAR_AWS_SECRET_KEY
+  TF_VAR_PUBLIC_KEY:
+    valut: TF_VAR_PUBLIC_KEY
+  TF_VAR_PRIVATE_KEY:
+    vault: TF_VAR_PRIVATE_KEY
   AWS_REGION: us-east-2
-
-
-# S3
-  S3_STACK_NAME: APPZ-AWS-CFT-S3
-  S3_BUCKETNAMES: appz-bucket-prasad0831
-  S3_DELETIONPOLICY: Delete
-  S3_ACCESSCONTROL: Private
-  S3_VERSIONING_STATUS: Suspended
-
-# Lambda
-  LAMBDA_STACK_NAME: appz-Lambda-Stack
-  AWS_CF_TEMPLATE: cloudformation.yaml.j2
-
-# REDSHIFT
-  REDSHIFT_STACK_NAME: appz-Redshift-Stack
-  REDSHIFT_MASTER_USER: test
-  REDSHIFT_DBPORT: 5439
-  REDSHIFT_SECURITYGROUPID: sg-4d4ff324
-  REDSHIFT_CIDRIP: 0.0.0.0/0
-  REDSHIFT_MASTER_PASS:
-    vault: REDSHIFT_MASTER_PASS
-    
-# Postgres
-  POSTGRESDB_STACK_NAME: appz-postgres-stack
-  POSTGRESDB_USER: test
-  POSTGRESDB_MASTER_NAME: testdb
-  POSTGRESDB_MASTER_PASSWORD:
-    vault: POSTGRESDB_MASTER_PASSWORD
-    
-# RDS - MSSQLSERVER
-  RDS_STACK_NAME: appz-RDS-Stack
-  ENGINE: sqlserver-se
-  DBINSTANCECLASS: db.t3.xlarge
-  SQLSERVER_USERNAME: appz
-  SQLSERVER_DBPORT: 1433
-  RDS_CIDR: 0.0.0.0/0
-  RDS_SECURITYGROUPID: sg-4d4ff324
-  SQLSERVER_PASSWORD:
-    vault: SQLSERVER_PASSWORD
-    
-  # SQS
-  SQS_QUEUE_NAME: testqueue
-  SQS_STACK_NAME: test
-  
-  # AURORA MYSQL
-  AURORA_MYSQL_STACK_NAME: auroramysql
-  AURORA_MYSQL_MASTER_USERNAME: master
-  AURORA_MYSQL_DATABASE_NAME: TESTMYSQLDB
-  AURORA_MYSQL_CLUSTER_NAME: mysqlcluster
-  AURORA_MYSQL_MASTER_PASSWORD:
-    vault: AURORA_MYSQL_MASTER_PASSWORD
-    
-# common properties  
-  APPZ_TEARDOWN_TOKEN: 20200831-2355
   revision : 15
