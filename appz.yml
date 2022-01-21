@@ -24,7 +24,7 @@ properties:
   TF_VAR_AWS_SECRET_KEY:
     vault: TF_VAR_AWS_SECRET_KEY
   TF_VAR_PUBLIC_KEY:
-    valut: TF_VAR_PUBLIC_KEY
+    vault: TF_VAR_PUBLIC_KEY
   TF_VAR_PRIVATE_KEY:
     vault: TF_VAR_PRIVATE_KEY
   AWS_REGION: us-east-2
