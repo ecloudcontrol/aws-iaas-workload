@@ -11,10 +11,8 @@ build:
   image_template: aws_test-2.0
 
 deploy:
-  context: skumarpi/DEV
+  context: alpha/DEV
   replicas: 1
-
-   
 
 properties:  
   TITLE: 'Welcome to AppZ Platform'
