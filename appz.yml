@@ -28,4 +28,4 @@ properties:
   TF_VAR_PRIVATE_KEY:
     vault: TF_VAR_PRIVATE_KEY
   AWS_REGION: us-east-2
-  revision : 17
+  revision : 19
