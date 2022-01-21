@@ -8,7 +8,7 @@ build:
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: aws_test-2.0
+  image_template: aws_ec2-2.0
 
 deploy:
   context: alpha/DEV
